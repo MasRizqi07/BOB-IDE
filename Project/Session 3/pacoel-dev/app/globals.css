@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────
+   Design Tokens — Pacoel.Dev
+   Single source of truth for the entire design system.
+───────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --nav-h: 72px;
+
+    /* Brand palette */
+    --cyan:         #06b6d4;
+    --cyan-dim:     rgba(6, 182, 212, 0.12);
+    --cyan-glow:    rgba(6, 182, 212, 0.25);
+    --blue:         #3b82f6;
+    --blue-dim:     rgba(59, 130, 246, 0.12);
+
+    /* Surface */
+    --bg:           #050a14;
+    --surface:      #0a1120;
+    --surface-2:    #0f1a2e;
+    --surface-3:    #162038;
+    --border:       rgba(255, 255, 255, 0.07);
+    --border-2:     rgba(6, 182, 212, 0.22);
+
+    /* Text */
+    --text:         #f0f4ff;
+    --text-muted:   rgba(240, 244, 255, 0.55);
+    --text-dim:     rgba(240, 244, 255, 0.3);
+
+    /* Transitions */
+    --tr:           0.22s ease;
+    --tr-slow:      0.45s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* Focus ring — accessible, brand-consistent */
+  :focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Scroll Progress Bar
+───────────────────────────────────────────────────────── */
+@layer components {
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cyan), var(--blue));
+    z-index: 9999;
+    transition: width 0.1s linear;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Framer Motion — respect reduced motion globally
+───────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Utility — hide scrollbar but keep scroll
+───────────────────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

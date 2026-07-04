@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora — The Modern Marketplace Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ CUSTOM CURSOR ═══ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══ SCROLL PROGRESS BAR ═══ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 28 28" fill="none"><path d="M4 14L14 4L24 14L14 24L4 14Z" fill="url(#lg1)"/><defs><linearGradient id="lg1" x1="4" y1="4" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+        </div>
+        <span class="logo-text">Nexora</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#features"   class="nav-link" data-section="features">Features</a></li>
+          <li><a href="#how"        class="nav-link" data-section="how">How It Works</a></li>
+          <li><a href="#categories" class="nav-link" data-section="categories">Categories</a></li>
+          <li><a href="#sellers"    class="nav-link" data-section="sellers">Sellers</a></li>
+          <li><a href="#pricing"    class="nav-link" data-section="pricing">Pricing</a></li>
+          <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀</span>
+        </button>
+        <a href="#" class="btn btn-nav-outline">Log In</a>
+        <a href="#" class="btn btn-nav-primary">Start Selling</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-label reveal-up">
+          <span class="label-dot"></span> Trusted by 500,000+ users worldwide
+        </div>
+        <h1 class="hero-title reveal-up" style="--delay:.1s">
+          The Marketplace
+          <span class="title-highlight">Built for the<br/>Future of Commerce</span>
+        </h1>
+        <p class="hero-subtitle reveal-up" style="--delay:.2s">
+          Buy, sell, and discover unique products from creators and entrepreneurs around the world. Zero fees for your first 60 days.
+        </p>
+        <div class="hero-cta reveal-up" style="--delay:.3s">
+          <a href="#" class="btn btn-primary btn-lg">
+            <span>Explore Marketplace</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#how" class="btn btn-ghost btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Watch Demo</span>
+          </a>
+        </div>
+        <div class="hero-trust reveal-up" style="--delay:.4s">
+          <div class="trust-avatars">
+            <div class="trust-avatar" style="--i:0"></div>
+            <div class="trust-avatar" style="--i:1"></div>
+            <div class="trust-avatar" style="--i:2"></div>
+            <div class="trust-avatar" style="--i:3"></div>
+          </div>
+          <div class="trust-text">
+            <span class="trust-rating">★★★★★</span>
+            <span class="trust-label">Rated 4.9 by <strong>12,000+</strong> sellers</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal-right">
+        <div class="hero-card-stack">
+          <div class="product-card-preview card-bg-1">
+            <div class="pcp-thumb"></div>
+            <div class="pcp-content">
+              <span class="pcp-badge">New</span>
+              <div class="pcp-title">Minimal Lamp Series</div>
+              <div class="pcp-row">
+                <span class="pcp-price">$128</span>
+                <span class="pcp-rating">★ 4.8</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-preview card-bg-2" style="--card-y:80px;--card-x:50px;--card-rot:-4deg;--card-z:-1">
+            <div class="pcp-thumb"></div>
+            <div class="pcp-content">
+              <span class="pcp-badge badge-purple">Sale</span>
+              <div class="pcp-title">Handcrafted Watch</div>
+              <div class="pcp-row">
+                <span class="pcp-price">$249</span>
+                <span class="pcp-rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-preview card-bg-3" style="--card-y:160px;--card-x:100px;--card-rot:-8deg;--card-z:-2">
+            <div class="pcp-thumb"></div>
+            <div class="pcp-content">
+              <span class="pcp-badge badge-green">Popular</span>
+              <div class="pcp-title">Digital Art Pack</div>
+              <div class="pcp-row">
+                <span class="pcp-price">$39</span>
+                <span class="pcp-rating">★ 5.0</span>
+              </div>
+            </div>
+          </div>
+          <!-- floating metrics -->
+          <div class="hero-metric metric-top">
+            <div class="metric-icon">🛒</div>
+            <div class="metric-data">
+              <span class="metric-val" id="ordersMetric">0</span>
+              <span class="metric-lbl">Orders Today</span>
+            </div>
+          </div>
+          <div class="hero-metric metric-bottom">
+            <div class="metric-icon">💰</div>
+            <div class="metric-data">
+              <span class="metric-val">$2.4M</span>
+              <span class="metric-lbl">Revenue Generated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ═══ STATS BAND ═══ -->
+  <section class="stats-band" id="stats">
+    <div class="container stats-grid">
+      <div class="stat-item reveal-up" style="--delay:0s">
+        <span class="stat-num" data-target="500" data-suffix="K+">0</span>
+        <span class="stat-desc">Active Users</span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.08s">
+        <span class="stat-num" data-target="120" data-suffix="K+">0</span>
+        <span class="stat-desc">Products Listed</span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.16s">
+        <span class="stat-num" data-target="98" data-suffix="%">0</span>
+        <span class="stat-desc">Satisfaction Rate</span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.24s">
+        <span class="stat-num" data-target="60" data-suffix="+">0</span>
+        <span class="stat-desc">Countries Served</span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.32s">
+        <span class="stat-num" data-target="24" data-suffix="/7">0</span>
+        <span class="stat-desc">Support Available</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ═══ -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">Why Nexora</div>
+        <h2 class="section-title">Everything you need to<br/>sell smarter, faster</h2>
+        <p class="section-subtitle">From discovery to checkout — we handle the complexity so you can focus on what matters: your products.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal-up" style="--delay:0s" data-glow="#a78bfa">
+          <div class="fc-icon" style="--c1:#a78bfa;--c2:#7c3aed">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Buyer Protection</h3>
+          <p>Every transaction is secured with our end-to-end escrow system and 30-day money-back guarantee.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card reveal-up" style="--delay:.07s" data-glow="#06b6d4">
+          <div class="fc-icon" style="--c1:#06b6d4;--c2:#0891b2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Instant Payouts</h3>
+          <p>Get paid within 24 hours of a confirmed order. Connect any bank account or digital wallet globally.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card reveal-up" style="--delay:.14s" data-glow="#f59e0b">
+          <div class="fc-icon" style="--c1:#f59e0b;--c2:#d97706">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>AI Discovery Engine</h3>
+          <p>Our smart recommendation algorithm surfaces your products to buyers who are most likely to convert.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card reveal-up" style="--delay:.21s" data-glow="#34d399">
+          <div class="fc-icon" style="--c1:#34d399;--c2:#059669">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Seller Dashboard</h3>
+          <p>Track sales, manage inventory, and analyse performance with real-time analytics built for growth.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card reveal-up" style="--delay:.28s" data-glow="#f472b6">
+          <div class="fc-icon" style="--c1:#f472b6;--c2:#db2777">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Live Chat Support</h3>
+          <p>Our team is available around the clock. Average first-response time: under 2 minutes.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+        <div class="feature-card reveal-up" style="--delay:.35s" data-glow="#60a5fa">
+          <div class="fc-icon" style="--c1:#60a5fa;--c2:#2563eb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Community & Reviews</h3>
+          <p>Verified reviews from real buyers build trust, improve conversions, and surface the best sellers.</p>
+          <div class="fc-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="section how bg-surface" id="how">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Up and selling in<br/>under 10 minutes</h2>
+        <p class="section-subtitle">No technical knowledge needed. Create your store, list your products, and start earning today.</p>
+      </div>
+      <div class="how-steps">
+        <div class="how-step reveal-up" style="--delay:0s">
+          <div class="step-num">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Create your account</h3>
+          <p>Sign up in seconds with email or Google. No credit card required to start your free trial.</p>
+        </div>
+        <div class="how-connector reveal-up" style="--delay:.05s"><div class="connector-line"></div></div>
+        <div class="how-step reveal-up" style="--delay:.1s">
+          <div class="step-num">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+          </div>
+          <h3>List your products</h3>
+          <p>Upload photos, write descriptions, and set your price. Our AI will suggest tags to boost visibility.</p>
+        </div>
+        <div class="how-connector reveal-up" style="--delay:.15s"><div class="connector-line"></div></div>
+        <div class="how-step reveal-up" style="--delay:.2s">
+          <div class="step-num">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3>Start receiving orders</h3>
+          <p>Your store goes live immediately. Buyers discover you through search, ads, and recommendations.</p>
+        </div>
+        <div class="how-connector reveal-up" style="--delay:.25s"><div class="connector-line"></div></div>
+        <div class="how-step reveal-up" style="--delay:.3s">
+          <div class="step-num">04</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Get paid instantly</h3>
+          <p>Funds are deposited to your account within 24 hours of confirmed delivery. Simple and transparent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CATEGORIES ═══ -->
+  <section class="section categories" id="categories">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">Browse by Category</div>
+        <h2 class="section-title">Find anything you're looking for</h2>
+        <p class="section-subtitle">Millions of products across hundreds of categories. Handcrafted, digital, or vintage — we have it all.</p>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card cat-1 reveal-up" style="--delay:0s">
+          <div class="cat-icon">🎨</div>
+          <div class="cat-info">
+            <h3>Art & Design</h3>
+            <span>18,400 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-2 reveal-up" style="--delay:.06s">
+          <div class="cat-icon">💻</div>
+          <div class="cat-info">
+            <h3>Tech & Gadgets</h3>
+            <span>31,200 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-3 reveal-up" style="--delay:.12s">
+          <div class="cat-icon">👗</div>
+          <div class="cat-info">
+            <h3>Fashion</h3>
+            <span>52,700 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-4 reveal-up" style="--delay:.18s">
+          <div class="cat-icon">🌿</div>
+          <div class="cat-info">
+            <h3>Home & Garden</h3>
+            <span>27,100 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-5 reveal-up" style="--delay:.24s">
+          <div class="cat-icon">📦</div>
+          <div class="cat-info">
+            <h3>Handmade</h3>
+            <span>14,900 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-6 reveal-up" style="--delay:.30s">
+          <div class="cat-icon">🎵</div>
+          <div class="cat-info">
+            <h3>Music & Audio</h3>
+            <span>9,300 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-7 reveal-up" style="--delay:.36s">
+          <div class="cat-icon">📚</div>
+          <div class="cat-info">
+            <h3>Books & Education</h3>
+            <span>11,500 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+        <div class="cat-card cat-8 reveal-up" style="--delay:.42s">
+          <div class="cat-icon">✨</div>
+          <div class="cat-info">
+            <h3>Digital Goods</h3>
+            <span>23,800 items</span>
+          </div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TOP SELLERS ═══ -->
+  <section class="section sellers bg-surface" id="sellers">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">Featured Sellers</div>
+        <h2 class="section-title">Meet our top creators</h2>
+        <p class="section-subtitle">Talented makers and entrepreneurs driving the future of independent commerce.</p>
+      </div>
+      <div class="sellers-grid">
+        <div class="seller-card reveal-up" style="--delay:0s">
+          <div class="seller-cover cover-1"></div>
+          <div class="seller-body">
+            <div class="seller-avatar av-1"></div>
+            <div class="seller-verified" title="Verified Seller">✓</div>
+            <h3>Aria Chen</h3>
+            <span class="seller-tag">Digital Art & Prints</span>
+            <div class="seller-stats">
+              <div><strong>1,240</strong><span>Sales</span></div>
+              <div><strong>★ 4.97</strong><span>Rating</span></div>
+              <div><strong>2y</strong><span>Member</span></div>
+            </div>
+            <a href="#" class="btn btn-seller">View Shop</a>
+          </div>
+        </div>
+        <div class="seller-card reveal-up" style="--delay:.1s">
+          <div class="seller-cover cover-2"></div>
+          <div class="seller-body">
+            <div class="seller-avatar av-2"></div>
+            <div class="seller-verified" title="Verified Seller">✓</div>
+            <h3>Marcus Lima</h3>
+            <span class="seller-tag">Handcrafted Watches</span>
+            <div class="seller-stats">
+              <div><strong>890</strong><span>Sales</span></div>
+              <div><strong>★ 5.00</strong><span>Rating</span></div>
+              <div><strong>3y</strong><span>Member</span></div>
+            </div>
+            <a href="#" class="btn btn-seller">View Shop</a>
+          </div>
+        </div>
+        <div class="seller-card reveal-up" style="--delay:.2s">
+          <div class="seller-cover cover-3"></div>
+          <div class="seller-body">
+            <div class="seller-avatar av-3"></div>
+            <div class="seller-verified" title="Verified Seller">✓</div>
+            <h3>Sofia Park</h3>
+            <span class="seller-tag">Fashion & Accessories</span>
+            <div class="seller-stats">
+              <div><strong>3,410</strong><span>Sales</span></div>
+              <div><strong>★ 4.95</strong><span>Rating</span></div>
+              <div><strong>4y</strong><span>Member</span></div>
+            </div>
+            <a href="#" class="btn btn-seller">View Shop</a>
+          </div>
+        </div>
+        <div class="seller-card reveal-up" style="--delay:.3s">
+          <div class="seller-cover cover-4"></div>
+          <div class="seller-body">
+            <div class="seller-avatar av-4"></div>
+            <div class="seller-verified" title="Verified Seller">✓</div>
+            <h3>Dion Wallace</h3>
+            <span class="seller-tag">Tech & Electronics</span>
+            <div class="seller-stats">
+              <div><strong>2,050</strong><span>Sales</span></div>
+              <div><strong>★ 4.93</strong><span>Rating</span></div>
+              <div><strong>1y</strong><span>Member</span></div>
+            </div>
+            <a href="#" class="btn btn-seller">View Shop</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">Transparent pricing,<br/>no hidden fees</h2>
+        <p class="section-subtitle">Start free, scale as you grow. Every plan includes our buyer protection and instant payouts.</p>
+      </div>
+      <!-- Toggle -->
+      <div class="pricing-toggle reveal-up">
+        <span class="tog-label" id="togMonthly">Monthly</span>
+        <button class="toggle-switch" id="pricingToggle" role="switch" aria-checked="false">
+          <span class="toggle-thumb"></span>
+        </button>
+        <span class="tog-label" id="togAnnual">Annual <span class="save-badge">Save 20%</span></span>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal-up" style="--delay:0s">
+          <div class="pc-header">
+            <div class="pc-name">Starter</div>
+            <div class="pc-price"><span class="pc-currency">$</span><span class="pc-amount" data-monthly="0" data-annual="0">0</span><span class="pc-period">/mo</span></div>
+            <p class="pc-tagline">Perfect for trying Nexora with no commitment.</p>
+          </div>
+          <ul class="pc-features">
+            <li><span class="check">✓</span> Up to 10 product listings</li>
+            <li><span class="check">✓</span> 5% transaction fee</li>
+            <li><span class="check">✓</span> Standard support</li>
+            <li><span class="check">✓</span> Basic analytics</li>
+            <li><span class="cross">✗</span> Custom storefront</li>
+            <li><span class="cross">✗</span> Priority discovery</li>
+          </ul>
+          <a href="#" class="btn btn-outline-plan">Get Started Free</a>
+        </div>
+        <div class="price-card price-popular reveal-up" style="--delay:.1s">
+          <div class="popular-badge">Most Popular</div>
+          <div class="pc-header">
+            <div class="pc-name">Growth</div>
+            <div class="pc-price"><span class="pc-currency">$</span><span class="pc-amount" data-monthly="29" data-annual="23">29</span><span class="pc-period">/mo</span></div>
+            <p class="pc-tagline">For serious sellers ready to scale their store.</p>
+          </div>
+          <ul class="pc-features">
+            <li><span class="check">✓</span> Unlimited listings</li>
+            <li><span class="check">✓</span> 2% transaction fee</li>
+            <li><span class="check">✓</span> Priority support</li>
+            <li><span class="check">✓</span> Advanced analytics</li>
+            <li><span class="check">✓</span> Custom storefront</li>
+            <li><span class="cross">✗</span> Priority discovery</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Start 14-Day Trial</a>
+        </div>
+        <div class="price-card reveal-up" style="--delay:.2s">
+          <div class="pc-header">
+            <div class="pc-name">Pro</div>
+            <div class="pc-price"><span class="pc-currency">$</span><span class="pc-amount" data-monthly="79" data-annual="63">79</span><span class="pc-period">/mo</span></div>
+            <p class="pc-tagline">Maximum visibility and tools for power sellers.</p>
+          </div>
+          <ul class="pc-features">
+            <li><span class="check">✓</span> Unlimited listings</li>
+            <li><span class="check">✓</span> 0% transaction fee</li>
+            <li><span class="check">✓</span> 24/7 dedicated support</li>
+            <li><span class="check">✓</span> Full analytics suite</li>
+            <li><span class="check">✓</span> Custom storefront</li>
+            <li><span class="check">✓</span> Priority discovery</li>
+          </ul>
+          <a href="#" class="btn btn-outline-plan">Get Pro Access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="section testimonials bg-surface" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">Loved by thousands<br/>of sellers</h2>
+      </div>
+      <div class="testimonials-carousel" id="testimonialsCarousel">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Nexora completely changed how I sell my art. Within a month of joining, my monthly revenue tripled. The discovery algorithm is just incredible."</p>
+            <div class="testi-author">
+              <div class="testi-av av-t1"></div>
+              <div><strong>Emma Rodriguez</strong><span>Illustrator, Mexico City</span></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"The instant payout feature is a game-changer. I no longer have to wait weeks to access my earnings. The dashboard is also beautifully designed."</p>
+            <div class="testi-author">
+              <div class="testi-av av-t2"></div>
+              <div><strong>James Wu</strong><span>Electronics Seller, Singapore</span></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"I tried four other platforms before Nexora. None of them came close in terms of support quality and the tools they provide to actually grow your business."</p>
+            <div class="testi-author">
+              <div class="testi-av av-t3"></div>
+              <div><strong>Lena Fischer</strong><span>Fashion Designer, Berlin</span></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"From setup to first sale in under 2 hours. The AI product tagging saved me so much time and my listings ranked on the first page almost immediately."</p>
+            <div class="testi-author">
+              <div class="testi-av av-t4"></div>
+              <div><strong>Kevin Osei</strong><span>Artisan Seller, Accra</span></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Nexora's buyer protection gives my customers complete confidence. My conversion rate went up by 40% simply because people trust the platform."</p>
+            <div class="testi-author">
+              <div class="testi-av av-t5"></div>
+              <div><strong>Priya Sharma</strong><span>Handmade Jewellery, Mumbai</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carr-btn" id="carrPrev" aria-label="Previous">‹</button>
+          <div class="carr-dots" id="carrDots"></div>
+          <button class="carr-btn" id="carrNext" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT / NEWSLETTER ═══ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-cta reveal-left">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Ready to start selling?</h2>
+          <p>Join over 500,000 entrepreneurs who trust Nexora to power their business. Our team is happy to answer any questions.</p>
+          <div class="contact-badges">
+            <div class="cbadge"><span>✓</span> Free 60-day trial</div>
+            <div class="cbadge"><span>✓</span> No credit card needed</div>
+            <div class="cbadge"><span>✓</span> Cancel anytime</div>
+          </div>
+        </div>
+        <div class="contact-form-wrap card reveal-right">
+          <h3>Send us a message</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic…</option>
+                <option>Becoming a Seller</option>
+                <option>Technical Support</option>
+                <option>Billing &amp; Payments</option>
+                <option>Partnership Inquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading">Sending…</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="form-success" id="formSuccess">Message sent! We'll get back to you within 24 hours. ✓</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo footer-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 28 28" fill="none"><path d="M4 14L14 4L24 14L14 24L4 14Z" fill="url(#lg2)"/><defs><linearGradient id="lg2" x1="4" y1="4" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs></svg>
+          </div>
+          <span class="logo-text">Nexora</span>
+        </a>
+        <p>The modern marketplace for the world's most creative entrepreneurs.</p>
+        <div class="footer-socials">
+          <a href="#" class="fsoc" aria-label="Twitter">X</a>
+          <a href="#" class="fsoc" aria-label="Instagram">IG</a>
+          <a href="#" class="fsoc" aria-label="LinkedIn">LI</a>
+          <a href="#" class="fsoc" aria-label="GitHub">GH</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>Marketplace</h4>
+          <a href="#">Browse Products</a>
+          <a href="#">Categories</a>
+          <a href="#">Top Sellers</a>
+          <a href="#">New Arrivals</a>
+        </div>
+        <div class="fl-col">
+          <h4>Sellers</h4>
+          <a href="#">Start Selling</a>
+          <a href="#">Seller Dashboard</a>
+          <a href="#">Pricing Plans</a>
+          <a href="#">Seller Handbook</a>
+        </div>
+        <div class="fl-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="fl-col">
+          <h4>Support</h4>
+          <a href="#">Help Centre</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2025 Nexora Inc. All rights reserved.</p>
+        <div class="footer-badges">
+          <span class="pay-badge">Visa</span>
+          <span class="pay-badge">MC</span>
+          <span class="pay-badge">PayPal</span>
+          <span class="pay-badge">ApplePay</span>
+        </div>
+        <a href="#home" class="back-top" id="backTop">↑ Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
